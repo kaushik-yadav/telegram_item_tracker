@@ -4,11 +4,11 @@ import json
 from datetime import datetime,timedelta
 from telethon.sync import TelegramClient
 
-API_ID = '28826251'
-API_HASH = 'd44db10815b9e5a0e4e8103d529fe80e'
-CHANNEL_USERNAME = 'https://t.me/icoolzTricks'
-CHANNEL_TO_SEND = "-1002016402378"
-TOKEN='6714897943:AAE6fpCWKEiHfW-P4nbVtYTan9wChckak3g'
+API_ID = "api_id"
+API_HASH = "your ap_hash"
+CHANNEL_USERNAME = "channel_link"
+CHANNEL_TO_SEND = "channel_id"
+TOKEN='channel_token'
 CHANNEL_TO_SEND_LINK = f'https://api.telegram.org/bot{TOKEN}/sendMessage'
 client = TelegramClient('tracky_session', API_ID, API_HASH)
 
@@ -17,7 +17,7 @@ async def main():
     channel = await client.get_entity(CHANNEL_USERNAME)
     messages = await client.get_messages(channel, limit=30)
     my_dict={"Date":"","Link":""}
-    to_find="anjeer"
+    to_find="shirt" #Enter any product
     file_name="tracker.json"
     link_format="https?://[^\n]*"
     time_format="%Y-%m-%d %H:%M:%S"
